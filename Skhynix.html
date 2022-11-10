@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Profit Decision Support System</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+        <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="nav-fixed">
+        <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+            <!-- Sidenav Toggle Button-->
+            <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
+            <!-- Navbar Brand-->
+            <!-- * * Tip * * You can use text or an image for your navbar brand.-->
+            <!-- * * * * * * When using an image, we recommend the SVG format.-->
+            <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+            <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">PDSS</a>
+            <!-- Navbar Search Input-->
+            <!-- * * Note: * * Visible only on and above the lg breakpoint-->
+            <form class="form-inline me-auto d-none d-lg-block me-3">
+                <div class="input-group input-group-joined input-group-solid">
+                    <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
+                    <div class="input-group-text"><i data-feather="search"></i></div>
+                </div>
+            </form>
+            <!-- Navbar Items-->
+            <ul class="navbar-nav align-items-center ms-auto">
+                <!-- Navbar Search Dropdown-->
+                <!-- * * Note: * * Visible only below the lg breakpoint-->
+                <li class="nav-item dropdown no-caret me-3 d-lg-none">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="search"></i></a>
+                    <!-- Dropdown - Search-->
+                    <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
+                        <form class="form-inline me-auto w-100">
+                            <div class="input-group input-group-joined input-group-solid">
+                                <input class="form-control pe-0" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                                <div class="input-group-text"><i data-feather="search"></i></div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sidenav shadow-right sidenav-light">
+                    <div class="sidenav-menu">
+                        <div class="nav accordion" id="accordionSidenav">
+                            <!-- Sidenav Menu Heading (Account)-->
+                            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+                            <div class="sidenav-menu-heading d-sm-none">Account</div>
+                            <!-- Sidenav Link (Alerts)-->
+                            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i data-feather="bell"></i></div>
+                                Alerts
+                                <span class="badge bg-warning-soft text-warning ms-auto">4 New!</span>
+                            </a>
+                            <!-- Sidenav Link (Messages)-->
+                            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i data-feather="mail"></i></div>
+                                Messages
+                                <span class="badge bg-success-soft text-success ms-auto">2 New!</span>
+                            </a>
+                            <!-- Sidenav Menu Heading (Core)-->
+                            <div class="sidenav-menu-heading">Information</div>
+                            <!-- Sidenav Accordion (Dashboard)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                Analysys
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                    <!-- Nested Sidenav Accordion (Pages -> Skhynix)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#SK" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        SK 하이닉스
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="SK" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="Skhynix.html">주가 분석</a>
+                                            <a class="nav-link" href="Skhynix_portfolio.html">포트폴리오</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Nested Sidenav Accordion (Pages -> Hanwha)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#Hanwha" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        한화에어로스페이스
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="Hanwha" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="Hanwha.html">주가 분석</a>
+                                            <a class="nav-link" href="Hanwha_portfolio.html">포트폴리오</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Nested Sidenav Accordion (Pages -> Woori)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#Woori" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        우리금융지주
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="Woori" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="Woori.html">주가 분석</a>
+                                            <a class="nav-link" href="Woori_portfolio.html">포트폴리오</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- Sidenav Heading (Custom)-->
+                            <div class="sidenav-menu-heading">News</div>
+
+                            <!-- Sidenav Accordion (Applications)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseApps">
+                                <div class="nav-link-icon"><i data-feather="globe"></i></div>
+                                News
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">
+                                    <!-- Nested Sidenav Accordion (Apps -> Knowledge Base)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#appsCollapseKnowledgeBase" aria-expanded="false" aria-controls="appsCollapseKnowledgeBase">
+                                        Knowledge Base
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="appsCollapseKnowledgeBase" data-bs-parent="#accordionSidenavAppsMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="newsinfo1.html">뉴스 정보</a>
+                                            <a class="nav-link" href="newsinfo2">주가 정보</a>
+                                            <a class="nav-link" href="newsinfo3.html">주식 사이트</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <!-- Main page content-->
+                    <div class="container-xl px-4 mt-5">
+                        <!-- Custom page header alternative example-->
+                        <div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-4">
+                            <div class="me-4 mb-3 mb-sm-0">
+                                <h1 class="mb-0">SK 하이닉스</h1>
+                                <div class="small">
+                                    <span class="fw-500 text-primary">Friday</span>
+                                    &middot; September 20, 2021 &middot; 12:16 PM
+                                </div>
+                            </div>
+                            <!-- Date range picker example-->
+                            <div class="input-group input-group-joined border-0 shadow" style="width: 16.5rem">
+                                <span class="input-group-text"><i data-feather="calendar"></i></span>
+                                <input class="form-control ps-0 pointer" id="litepickerRangePlugin" placeholder="Select date range..." />
+                            </div>
+                        </div>
+                        <!-- Illustration dashboard card example-->
+                        <div class="card card-waves mb-4 mt-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col">
+                                        <h2 class="text-primary">About SK 하이닉스</h2>
+                                        <p class="text-gray-700">에스케이하이닉스주식회사는 주로 메모리 반도체 제품의 제조 및 판매에 종사하는 한국 기반 회사입니다. 회사의 주요 제품은 다이내믹 랜덤 액세스 메모리, 낸드플래시, 그리고 멀티칩패키지 등이 포함됩니다. 이외에도, 회사는 시모스 이미지 센서의 제조 및 판매를 영위하고 있습니다. 시모스 이미지 센서는 모바일 폰, 노트북, 태블릿, 의료 기기, 디지털 일안 반사식 카메라, 캠코더, 자동차, 보안 장비, 게임기, 가전 제품 등에 사용되고 있습니다. 화사는 국내 시장과 미국, 독일, 영국, 일본, 싱가포르, 인도, 중국 등 해외 시장에서 제품을 판매하고 있습니다.</p>
+                                        <a class="btn btn-primary p-3" href="#!">
+                                            Get Started
+                                            <i class="ms-1" data-feather="arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col d-none d-lg-block mt-xxl-n4"><img class="img-fluid px-xl-4 mt-xxl-n5" src="assets/img/illustrations/statistics.svg" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <!-- Dashboard info widget 1-->
+                                <div class="card border-start-lg border-start-primary h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <div class="small fw-bold text-primary mb-1">금일 시가</div>
+                                                <div class="h5">$4,390</div>
+                                                <div class="text-xs fw-bold text-success d-inline-flex align-items-center">
+                                                    <i class="me-1" data-feather="trending-up"></i>
+                                                    12%
+                                                </div>
+                                            </div>
+                                            <div class="ms-2"><i class="fas fa-dollar-sign fa-2x text-gray-200"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <!-- Dashboard info widget 2-->
+                                <div class="card border-start-lg border-start-secondary h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <div class="small fw-bold text-secondary mb-1">평균 거래량</div>
+                                                <div class="h5">$27.00</div>
+                                                <div class="text-xs fw-bold text-danger d-inline-flex align-items-center">
+                                                    <i class="me-1" data-feather="trending-down"></i>
+                                                    3%
+                                                </div>
+                                            </div>
+                                            <div class="ms-2"><i class="fas fa-tag fa-2x text-gray-200"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <!-- Dashboard info widget 3-->
+                                <div class="card border-start-lg border-start-success h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <div class="small fw-bold text-success mb-1">주당순이익</div>
+                                                <div class="h5">16,691.47</div>
+                                                <div class="text-xs fw-bold text-success d-inline-flex align-items-center">
+                                                    <i class="me-1" data-feather="trending-up"></i>
+                                                    12%
+                                                </div>
+                                            </div>
+                                            <div class="ms-2"><i class="fas fa-mouse-pointer fa-2x text-gray-200"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <!-- Dashboard info widget 4-->
+                                <div class="card border-start-lg border-start-info h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <div class="small fw-bold text-info mb-1">배당금</div>
+                                                <div class="h5">2,440,00 (2.74%)</div>
+                                                <div class="text-xs fw-bold text-danger d-inline-flex align-items-center">
+                                                    <i class="me-1" data-feather="trending-down"></i>
+                                                    1%
+                                                </div>
+                                            </div>
+                                            <div class="ms-2"><i class="fas fa-percentage fa-2x text-gray-200"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-4">
+                                <!-- Illustration card example-->
+                                <div class="card mb-4">
+                                    <div class="card-body text-center p-5">
+                                        <img class="img-fluid mb-5" src="assets/img/illustrations/data-report.svg" />
+                                        <h4>SK 하이닉스 포트폴리오</h4>
+                                        <p class="mb-4">SK 하이닉스의 투자정보를 포트폴리오를 통해서 확인해보고 싶으신가요? 여기를 클릭해 투자의 위험성과 투자 가치를 확인해보세요.</p>
+                                        <a class="btn btn-primary p-3" href="#!">Portfolio</a>
+                                    </div>
+                                </div>
+                                <!-- Report summary card example-->
+                                <div class="card mb-4">
+                                    <div class="card-header">Affiliate Reports</div>
+                                    <div class="list-group list-group-flush small">
+                                        <a class="list-group-item list-group-item-action" href="#!">
+                                            <i class="fas fa-dollar-sign fa-fw text-blue me-2"></i>
+                                            Earnings Reports
+                                        </a>
+                                        <a class="list-group-item list-group-item-action" href="#!">
+                                            <i class="fas fa-tag fa-fw text-purple me-2"></i>
+                                            Average Sale Price
+                                        </a>
+                                        <a class="list-group-item list-group-item-action" href="#!">
+                                            <i class="fas fa-mouse-pointer fa-fw text-green me-2"></i>
+                                            Engagement (Clicks &amp; Impressions)
+                                        </a>
+                                        <a class="list-group-item list-group-item-action" href="#!">
+                                            <i class="fas fa-percentage fa-fw text-yellow me-2"></i>
+                                            Conversion Rate
+                                        </a>
+                                        <a class="list-group-item list-group-item-action" href="#!">
+                                            <i class="fas fa-chart-pie fa-fw text-pink me-2"></i>
+                                            Segments
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Progress card example-->
+                                <div class="card bg-primary border-0">
+                                    <div class="card-body">
+                                        <h5 class="text-white-50">Budget Overview</h5>
+                                        <div class="mb-4">
+                                            <span class="display-4 text-white">$48k</span>
+                                            <span class="text-white-50">per year</span>
+                                        </div>
+                                        <div class="progress bg-white-25 rounded-pill" style="height: 0.5rem"><div class="progress-bar bg-white w-75 rounded-pill" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 mb-4">
+                                <!-- Area chart example-->
+                                <div class="card mb-4">
+                                    <div class="card-header">총 자산</div>
+                                    <div class="card-body">
+                                        <div class="chart-area"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <!-- Bar chart example-->
+                                        <div class="card h-100">
+                                            <div class="card-header">현금 흐름표</div>
+                                            <div class="card-body d-flex flex-column justify-content-center">
+                                                <div class="chart-bar"><canvas id="myBarChart" width="100%" height="30"></canvas></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <!-- Pie chart example-->
+                                        <div class="card h-100">
+                                            <div class="card-header">Traffic Sources</div>
+                                            <div class="card-body">
+                                                <div class="chart-pie mb-4"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
+                                                <div class="list-group list-group-flush">
+                                                    <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
+                                                        <div class="me-3">
+                                                            <i class="fas fa-circle fa-sm me-1 text-blue"></i>
+                                                            분기별 총자산
+                                                        </div>
+                                                        <div class="fw-500 text-dark">104147622</div>
+                                                    </div>
+                                                    <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
+                                                        <div class="me-3">
+                                                            <i class="fas fa-circle fa-sm me-1 text-purple"></i>
+                                                            총부채
+                                                        </div>
+                                                        <div class="fw-500 text-dark">37387462</div>
+                                                    </div>
+                                                    <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
+                                                        <div class="me-3">
+                                                            <i class="fas fa-circle fa-sm me-1 text-green"></i>
+                                                            총자본
+                                                        </div>
+                                                        <div class="fw-500 text-dark">66760160</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables/datatables-simple-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
+        <script src="js/litepicker.js"></script>
+    </body>
+</html>

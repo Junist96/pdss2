@@ -124,15 +124,7 @@ packages = [
                   .encode(x=x+':Q', y=y+':Q')
           )
 
-      intro = pn.pane.Markdown("""
-      This app provides an example of **building a simple dashboard using
-      Panel**.\n\nIt demonstrates how to take the output of **k-means
-      clustering on the Penguins dataset** using scikit-learn,
-      parameterizing the number of clusters and the variables to
-      plot.\n\nThe plot and the table are linked, i.e. selecting on the plot
-      will filter the data in the table.\n\n The **`x` marks the center** of
-      the cluster.
-      """).servable(target='intro')
+
 
       chart = pn.pane.Vega().servable(target='cluster-plot')
       table = pn.widgets.Tabulator(pagination='remote', page_size=10).servable(target='table')
